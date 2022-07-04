@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "AdminDashbord";
+}
+
+<h2>AdminDashbord</h2>
+
+<html>
+<head>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    @if (TempData["name"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <p> LOG IN SUCCESSFULL</p>
+        </div>
+    }
+</body>
+</html>
+

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Documentation | srtdash - srtdash Admin Template</title>
+        <meta name="description" content="Thanks for purchasing Huge. If you need any support, please contact with us.">
+        <meta name="author" content="uttaraitpark">
+        <meta name="copyright" content="uttaraitpark">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+
+        
+        <style>
+            .sh2 {
+                background-color: brown;
+                padding: 30px 0px;
+                position: relative;
+                content: "";
+                top: 4rem;
+                margin-left: 30rem;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 900;
+                color: white;
+            }
+            .right-content {
+                margin-top: 6rem;
+                padding:0px;
+            }
+          
+        </style>
+        
+    </head>
+
+    <body>
+        <fieldset>
+            <h2 class="sh2">Rental Property Management System </h2>
+        </fieldset>
+
+        <div class="wrapper">
+            <div class="left-side">
+                <div class="logo">
+                    @*<img src="~/img/logo2.png" alt="" />*@
+                </div>
+                <div class="left-content">
+                    <ul role="tablist">
+                        <li role="presentation" class="active1"><a href="/Seller/Index" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Welcome</a></li>
+                        <li role="presentation"><a href="/Seller/ApDetails" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Apartment details</a></li>
+                        <li role="presentation"><a href="" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-code"></i></span>Consumer rating</a></li>
+                        <li role="presentation"><a href="" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-slideshare"></i></span>Advertising</a></li>
+                        <li role="presentation"><a href="" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-thumbs-up"></i></span>Sales report in graph</a></li>
+                        <li role="presentation"><a href="" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-support"></i></span>contact</a></li>
+                        <li role="presentation"><a href="/UserDetails/Logout" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-support"></i></span>Log out</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="right-side">
+                <div class="right-content">
+
+                    @RenderBody()
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+
+            <script src="~/Scripts/main.js"></script>
+</body>
+</html>

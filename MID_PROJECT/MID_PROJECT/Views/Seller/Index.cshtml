@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@{
+    Layout = "~/Views/shared/_LayoutPage1.cshtml";
+}
+  
+
+
+
+
+<html>
+<head>
+    <style>
+        h1, h2 {
+           color:white;
+           font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .cl {
+            margin-top: 0px;
+            position: relative;
+            content: "";
+            top: 18rem;
+            left: 19rem;
+            background-color: brown;
+            margin-right: 21rem;
+            padding:5rem;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="cl">
+        <h2>Hello , @Session["username"]</h2>
+        <h1>Wellcome to the Seller Dashbord</h1>
+       
+    </div>
+
+</body>
+</html>

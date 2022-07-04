@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@{
+        Layout = "~/Views/shared/LayoutPage.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: brown;
+            color: white;
+            display: inline-block;
+            width: 48%;
+            padding: 31px;
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 48%;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hello , @Session["username"] <br />
+    Wellcome to the Admin Dashbord</h1>
+</body>
+</html>
+

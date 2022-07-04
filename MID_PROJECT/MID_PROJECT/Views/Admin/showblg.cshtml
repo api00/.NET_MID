@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "showblg";
+}
+@{
+    Layout = "~/Views/shared/LayoutPage.cshtml";
+}
+
+
+<html>
+<head>
+    <style>
+
+        table {
+            width: 750px;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+
+        /* Zebra striping */
+        tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        th {
+            background: brown;
+            color: white;
+            font-weight: bold;
+        }
+
+        td, th {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h4 {
+            background-color: brown;
+            padding: 15px 0px;
+            margin-top: 28px;
+            font-size: 20px;
+            color: whitesmoke;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="dataTable">
+        <tr>
+            <th>Admin Id </th>
+            <th>Title</th>
+            <th>Img</th>
+            <th>Date</th>
+            <th>Details</th>
+
+
+
+
+        </tr>
+
+        @foreach (var p in Model)
+        {
+
+            <tr>
+
+
+                <td>@p.a_id</td>
+                <td>@p.title</td>
+                <td>
+                    <img src="@Url.Content(p.img)" height="150px" width="150px" />
+                </td>
+                <td>@p.date</td>
+                <td>@p.details</td>
+                @*<td><a id="usrId" href="/Admin/Edit/@p.user_id">edit</a></td>*@
+                <td><a id="usrId" href="/Admin/deleteBlg/@p.id">Delete</a></td>
+
+
+
+            </tr>
+        }
+
+
+
+
+    </table>
+
+    <h4>Copyright© 2022-2023 by Api Alam, All Rights Reserved.</h4>
+</body>
+</html>
+

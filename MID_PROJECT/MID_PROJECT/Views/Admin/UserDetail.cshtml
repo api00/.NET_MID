@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewBag.Title = "UserDetail";
+}
+@{
+    Layout = "~/Views/shared/LayoutPage.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+
+
+
+        table {
+            width: 750px;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+
+        /* Zebra striping */
+        tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+
+        th {
+            background: brown;
+            color: white;
+            font-weight: bold;
+        }
+        fieldset {
+            border: 4px solid;
+            border-color: brown;
+        }
+        td, th {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+        }
+        select {
+            text-align: center;
+            display: block;
+            width: 22%;
+            margin: 0 auto;
+            margin-top: 16px;
+            padding: 10px;
+            color: white;
+            background-color: brown;
+            font-family: system-ui;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        input#s_btn {
+            text-align: center;
+            display: block;
+            width: 10%;
+            margin: 0 auto;
+            margin-top: 29px;
+            padding: 12px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 17px;
+            background: brown;
+            font-weight: 900;
+        }
+        h3 {
+            display: block;
+            width: 34%;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 2rem;
+            padding: 11px 0px;
+            border: 2px solid;
+            border-color: black;
+            font-size: 18px;
+            font-family: monospace;
+        }
+    </style>
+ 
+
+</head>
+<body>
+    <table id="dataTable">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>USER ID</th>
+            <th>ROLES</th>
+            <th>STATUS</th>
+        </tr>
+        @foreach (var p in Model)
+        {
+
+
+    <tr>
+        <td>@p.id</td>
+        <td>@p.name</td>
+        <td>@p.email</td>
+        <td id="cd">@p.user_id</td>
+
+        <td>@p.rules</td>
+        <td>@p.status</td>
+        @*<td><a id="usrId" href="/Admin/Edit/@p.user_id">edit</a></td>*@
+        <td><a id="usrId" href="/Admin/delete/@p.id">Delete</a></td>
+
+
+
+    </tr>
+    }
+      
+
+
+
+    </table>
+
+
+
+    <fieldset>
+
+        <h3>Change status</h3>
+
+        <div class="editor-label">
+
+            <select id="name">
+                <option>Select one</option>
+                @foreach (var q in Model)
+                {
+                    <option value="@q.name">@q.name</option>
+                }
+            </select>
+        </div>
+        <br />
+        <div class="editor-label">
+            <select id="option">
+                <option>Select one</option>
+
+                <option value="Active">Active</option>
+                <option value="Block">Block</option>
+
+            </select>
+        </div>
+
+        <input type="button" id="s_btn" value="Change" />
+
+
+    </fieldset>
+
+
+
+
+
+
+
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script>
+
+
+        $("#s_btn").click(function (event) {
+            $.ajax({
+                url: "/Admin/Status/",
+
+
+
+                data: {
+                    name: $("#name").val(),
+                    option: $("#option").val()
+                },
+
+                cache: false,
+                type: "POST",
+                dataType: "html",
+
+                success: function (data) {
+
+                }
+            });
+        });
+
+      
+
+
+
+    </script>
+</body>
+</html>

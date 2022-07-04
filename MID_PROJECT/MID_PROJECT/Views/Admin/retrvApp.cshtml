@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "retrvApp";
+}
+
+
+
+<html>
+<head>
+    <style>
+
+        table {
+            width: 750px;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+
+        /* Zebra striping */
+        tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        th {
+            background: brown;
+            color: white;
+            font-weight: bold;
+        }
+
+        td, th {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h4 {
+            background-color: brown;
+            padding: 15px 0px;
+            margin-top: 28px;
+            font-size: 20px;
+            color: whitesmoke;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="dataTable">
+        <tr>
+            <th>Applicant Size</th>
+            <th>Seller id</th>
+            <th>Seller Name</th>
+            <th>Location</th>
+            <th>Seller NID number</th>
+
+
+            <th>Seller address</th>
+            <th>Home Registered Number</th>
+            <th>Apartment Price</th>
+            <th>Apartment id</th>
+
+            <th> Img</th>
+            <th> bed</th>
+            <th>  bath</th>
+
+        </tr>
+
+       
+
+            <tr>
+                <td>@Model.a_size</td>
+                <td>@Model.s_id</td>
+                <td>@Model.s_name</td>
+                <td id="cd">@Model.location</td>
+
+                <td>@Model.s_nid</td>
+
+                <td>@Model.s_address</td>
+                <td>@Model.h_register_n</td>
+                <td>@Model.price</td>
+                <td>@Model.a_id</td>
+                <td>
+                    <img src="@Url.Content(Model.img)" height="150px" width="150px" />
+                </td>
+                <td>@Model.bed</td>
+                <td>@Model.bath</td>
+                @*<td><a id="usrId" href="/Admin/Edit/@p.user_id">edit</a></td>*@
+                @*<td><a id="usrId" href="/Seller/deleteapp/@p.id">Delete</a></td>*@
+
+
+
+            </tr>
+        }
+
+
+
+
+    </table>
+
+    <h4>Copyright© 2022-2023 by Api Alam, All Rights Reserved.</h4>
+</body>
+</html>

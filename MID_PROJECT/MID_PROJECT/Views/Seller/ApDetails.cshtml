@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "ApDetails";
+}
+@{
+    Layout = "~/Views/shared/_LayoutPage1.cshtml";
+}
+<html>
+<head>
+    <style>
+
+        fieldset {
+           
+        }
+        input[type=text], select {
+            width: 30%;
+            margin: 0 auto;
+            padding: 12px 20px;
+            margin: 8px 0;
+        }
+
+        input[type=number] {
+            width: 30%;
+            margin: 0 auto;
+            padding: 12px 20px;
+            margin: 8px 0;
+        }
+
+        .apartment-container {
+            width: 50%;
+            margin: 0 auto;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+
+
+
+        .asd {
+            border: 14px solid;
+            border-width: 1px;
+            border-color: brown;
+            position: relative;
+            padding: 2rem;
+            margin: 0px;
+        }
+
+        .add {
+            font-size: 18px;
+            color: whitesmoke;
+            border: 1px solid black;
+            margin-top: 10px;
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            cursor: pointer;
+            background-color: brown;
+        }
+        h4 {
+            background-color: brown;
+            padding: 15px 0px;
+            margin-top:28px;
+            font-size: 20px;
+            color: whitesmoke;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <div class="apartment-container">
+        <form action="" method="post" name="" enctype="multipart/form-data"  >
+            <h2 style="text-align: center; color: white; background-color: brown; padding: 2rem;">Appartment Details</h2>
+            <div class="asd">
+                <fieldset>
+                    <label for="Aid">Appartment Size</label>
+                    <input type="number" name="a_size" class="form-control" placeholder="">
+                    <label for="Aid">Appartment Title</label>
+                    <input type="text" name="a_title" class="form-control" placeholder="">
+                    <label for="Aname">Seller id</label>
+                    <input type="number" name="s_id" class="form-control" value="@Session["user_id"]"  placeholder="">
+
+                    <label for="Aemail">Seller Name</label>
+                    <input type="text" name="s_name" class="form-control" value="@Session["username"]"  placeholder="">
+                    <label for="Aphone">Location</label>
+                    <input type="text" name="location" class="form-control" placeholder="">
+                    <label for="A_pname"> Seller NID number</label>
+                    <input type="number" name="s_nid" class="form-control" placeholder="">
+                    <label for="A_buliding">Seller Email</label>
+                    <input type="text" name="s_email" class="form-control" placeholder="">
+                    <label for="A_area">seller Number</label>
+                    <input type="text" name="s_num" class="form-control" placeholder="">
+                    <label for="A_price">Seller address</label>
+                    <input type="text" name="s_address" class="form-control" placeholder="">
+                    <label for="A_price">Home Registered Number</label>
+                    <input type="text" name="h_register_n" class="form-control" placeholder="">
+                    <label for="A_price">Apartment Price</label>
+                    <input type="number" name="price" class="form-control" placeholder="">
+                    <label for="A_price">Apartment id</label>
+                    <input type="number" name="a_id" class="form-control" placeholder=""><br />
+                    <label for="A_price">Apartment Img</label>
+                    <input type="file" name="File" /> <br />
+                    <label for="A_price">No of bed</label>
+                    <input type="number" name="bed" class="form-control" placeholder="">
+                    <label for="A_price">No of  bath</label>
+                    <input type="number" name="bath" class="form-control" placeholder="">
+                    <label for="A_price">Country</label>
+                    <input type="text" name="country" class="form-control" placeholder="">
+                </fieldset>
+            </div>
+            <input type="submit" class="add" name="submit" value="Add"> <br> <br>
+            </form>
+            <a class="add" href="/Seller/showApp">Show All Apartments</a>
+            </div>
+
+            <h4>Copyright© 2022-2023 by Api Alam, All Rights Reserved.</h4>
+
+</body>
+</html>
+

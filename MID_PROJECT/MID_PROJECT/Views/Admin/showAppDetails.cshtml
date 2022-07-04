@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "showAppDetails";
+}
+@{
+    Layout = "~/Views/shared/LayoutPage.cshtml";
+}
+
+<html>
+<head>
+
+    <style>
+
+
+        table {
+            width: 750px;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+
+        /* Zebra striping */
+        tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+
+        th {
+            background: brown;
+            color: white;
+            font-weight: bold;
+        }
+
+        fieldset {
+            border: 4px solid;
+            border-color: brown;
+        }
+
+        td, th {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        select {
+            text-align: center;
+            display: block;
+            width: 22%;
+            margin: 0 auto;
+            margin-top: 16px;
+            padding: 10px;
+            color: white;
+            background-color: brown;
+            font-family: system-ui;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        input#s_btn {
+            text-align: center;
+            display: block;
+            width: 10%;
+            margin: 0 auto;
+            margin-top: 29px;
+            padding: 12px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 17px;
+            background: brown;
+            font-weight: 900;
+        }
+
+        h3 {
+            display: block;
+            width: 34%;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 2rem;
+            padding: 11px 0px;
+            border: 2px solid;
+            border-color: black;
+            font-size: 18px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+
+        <h3>Appartment  Details</h3>
+
+        <div class="editor-label">
+
+            <select id="name">
+                <option>Select one</option>
+                @foreach (var q in Model)
+                {
+                    <option value="@q.country">@q.country</option>
+                }
+            </select>
+        </div>
+        <br />
+
+        <input type="button" id="s_btn" value="View" />
+
+        <div id="showData">
+
+        </div>
+    </fieldset>
+
+
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script>
+
+
+        $("#s_btn").click(function (event) {
+            $.ajax({
+                url: "/Admin/retrvApp/",
+
+
+
+                data: {
+                    name: $("#name").val(),
+                    
+                },
+
+                cache: false,
+                type: "POST",
+                dataType: "html",
+
+                success: function ($data) {
+                    $("#showData").html($data);
+                }
+            });
+        });
+
+
+
+
+
+    </script>
+</body>
+</html>
+

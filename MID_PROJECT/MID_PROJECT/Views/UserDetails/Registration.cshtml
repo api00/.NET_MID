@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+}
+<html>
+<head>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    @*<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />*@
+</head>
+<body>
+    <h2></h2>
+    <div class="container">
+      
+        <form id="contact" action="" method="post" enctype="multipart/form-data">
+            <h3>User Registration</h3>
+            <h4>This form is for All user who belong to this system</h4>
+
+            @if (TempData["name"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    <p> Your response has been submitted</p>
+                </div>
+            }
+            <fieldset>
+                <input placeholder="Your name" type="text" tabindex="1" name="name" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Email Address" type="email" tabindex="2" name="email" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="user id" type="number" tabindex="3" name="user_id" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="password" type="password" tabindex="4" name="password" required>
+            </fieldset>
+            <fieldset>
+                <span class="custom-dropdown big">
+                    <select class="rules" name="rules" required>
+                        <option value="Admin">Admin</option>
+                        <option value="Seller">Seller</option>
+                        <option value="Buyer">Buyer</option>
+                        <option value="Tenant">Tenant</option>
+                    </select>
+                </span>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Image" type="file" tabindex="4" name="File" required>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+            @*<p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>*@
+            <p>If you registerd, click Login button <a href="/UserDetails/Login">Login</a></p>
+        </form>
+    </div>
+
+
+    
+</body>
+
+</html>
